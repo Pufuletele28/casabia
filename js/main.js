@@ -115,7 +115,7 @@ $(document).ready(function() {
 
     // nav 
 
-    $(".haf-nav a, .links a").click(function (e) {
+    $(".haf-nav a, .links a, div.text-wrapper:nth-child(2) > a:nth-child(3)").click(function (e) {
 
         e.preventDefault();
 
