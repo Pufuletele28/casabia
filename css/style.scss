@@ -24,6 +24,7 @@ div {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  scrollbar-width: 10px;
 }
 
 section {
@@ -92,6 +93,58 @@ section {
 
 .scrolled {
   background-color: #c4c4c43a;
+}
+
+.scrolled-nav {
+  width: 100%;
+  position: fixed;
+  top: -100%;
+  background-color: #c4c4c43a;
+  z-index: 3;
+  transition: 0.3s;
+  // display: none;
+
+  .haf-nav {
+    width: 50%;
+  }
+
+  .haf-nav:first-child {
+    padding-left: 100px;
+
+    h2 {
+      color: #fff;
+      font-size: 30px;
+      margin: 25px 0;
+
+      span {
+        color: #e38b39;
+      }
+    }
+  }
+
+  .haf-nav:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      float: left;
+      box-sizing: border-box;
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+      padding: 31.5px 15px;
+      transition: 0.3s;
+
+      &:hover {
+        color: #e38b39;
+      }
+    }
+
+    a.active {
+      color: #e38b39;
+    }
+  }
 }
 
 #acasa {
@@ -225,7 +278,6 @@ section {
 }
 
 #galerie {
-
   .haf:first-child {
     // overflow: hidden;
 
@@ -321,9 +373,7 @@ section {
     }
 
     #activeDot {
-
-        background-color: #e38b39;
-    
+      background-color: #e38b39;
     }
 
     .dot {
@@ -378,144 +428,192 @@ section {
 }
 
 #meniu {
-
   .haf:first-child {
-
     display: flex;
     justify-content: center;
     align-items: center;
 
     .menu-nav-wrapper {
-
       width: 730px;
 
-      >div {
-
+      > div {
         width: 100%;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-
       }
 
       .main-menu-cat {
-
         h3 {
-
           color: #fff;
           font-size: 35px;
           cursor: pointer;
           text-transform: uppercase;
-
         }
 
         h3.active {
-
           color: #e38b39;
-
         }
-
       }
 
       .sec-menu-cat {
-
         flex-wrap: wrap;
 
         p {
-
           color: #e38b39;
           cursor: pointer;
           font-size: 20px;
           margin: 10px;
-
         }
 
         p.active {
-
           color: #fff;
-
         }
-
       }
-
     }
-
   }
 
   .haf:last-child {
-
-    background-color: #fff;
+    background-color: #e38b39;
     padding: 0 50px;
     overflow: auto;
     scrollbar-width: none;
 
-    >h2 {
-
+    > h2 {
       font-size: 35px;
-      color: #e38b39;
+      color: #fff;
       text-align: center;
-    
     }
 
     .product {
-
       width: 100%;
       margin: 20px 0;
-      
+
       .product-img {
-        
         position: relative;
         width: 27.5%;
         margin-right: 5%;
 
         img {
-
           width: 100%;
           height: 200px;
           min-width: 200px;
           object-fit: cover;
-
         }
       }
 
       .product-text {
         position: relative;
         width: 67.5%;
-        h4, p {
-
+        h4,
+        p {
           float: left;
           box-sizing: border-box;
           width: 100%;
-          color: #e38b39;
+          color: #fff;
           text-overflow: ellipsis;
-
-          /* Needed to make it work */
           overflow: hidden;
           white-space: nowrap;
-
         }
 
         p {
-          
           margin: 10px 0;
-
         }
 
         h4 {
-          
           font-size: 25px;
           margin: 0 0 15px 0;
+        }
+      }
+    }
+  }
+}
 
+#rezerva {
+  .haf:first-child {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/pexels-valeria-boltneva-1484516.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .haf:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .rezerva-wrapper {
+      width: 80%;
+
+      h2 {
+        font-size: 50px;
+        color: #e38b39;
+        text-align: center;
+      }
+
+      .input {
+        width: 49%;
+        border: 4px solid #e38b39;
+        position: relative;
+        margin: 20px 0;
+
+        input {
+          width: 100%;
+          float: left;
+          box-sizing: border-box;
+          background-color: transparent;
+          padding: 10px;
+          outline: none;
+          border: none;
+          color: #fff;
+          font-size: 20px;
+        }
+
+        span {
+          position: absolute;
+          top: -15px;
+          left: 10px;
+          background-color: #16191e;
+          color: #e38b39;
+          padding: 0 10px;
         }
       }
 
+      .input:nth-child(2),
+      .input:nth-child(5) {
+        margin-right: 2%;
+      }
+
+      .input:nth-child(4),
+      .input:nth-child(7) {
+        width: 100%;
+      }
+
+      .rezerva-submit {
+        width: 100%;
+        background-color: #e38b39;
+        border: 4px solid #fff;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
     }
-
   }
-
 }
 
 @media (max-width: 1500px) {
+  .scrolled-nav {
+    .haf-nav:last-child {
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+
   #acasa {
     .haf:first-child {
       .text-wrapper {
@@ -542,6 +640,14 @@ section {
 }
 
 @media (max-width: 1120px) {
+  .scrolled-nav {
+    .haf-nav:last-child {
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
   #acasa {
     .haf:first-child {
       .haf-nav {
@@ -554,6 +660,10 @@ section {
 }
 
 @media (max-width: 950px) {
+  .scrolled-nav {
+    display: none;
+  }
+
   #acasa {
     .haf:first-child {
       .haf-nav {
@@ -578,14 +688,12 @@ section {
   }
 
   #galerie {
-
     height: 100vh;
 
     .haf:last-child {
       display: none;
     }
   }
-
 }
 
 @media (min-width: 950px) {
@@ -599,34 +707,22 @@ section {
 }
 
 @media (max-width: 750px) {
-
-  
   #meniu {
-  
     .haf:last-child {
-  
       .product {
-        
         .product-img {
-          
           position: relative;
           width: 30%;
           margin-right: 20%;
-
         }
-  
+
         .product-text {
           position: relative;
           width: 50%;
-
         }
-  
       }
-  
     }
-  
   }
-
 }
 
 @media (max-width: 650px) {
@@ -644,34 +740,32 @@ section {
       }
     }
   }
+
+  #rezerva {
+    .haf:last-child {
+      .rezerva-wrapper {
+        .input {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 550px) {
-
   #meniu {
-  
     .haf:last-child {
-  
       .product {
-        
         .product-img {
-          
-          width: 100%
-
-        }
-        
-        .product-text {
-
           width: 100%;
-
         }
-  
-      }
-  
-    }
-  
-  }
 
+        .product-text {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 450px) {

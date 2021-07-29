@@ -50,13 +50,29 @@ $(document).ready(function() {
 
     });
 
+    let lastScrollTop = 0
+
+
     $(".main-container").on("scroll", function () {
 
-        if ($(".main-container")[0].scrollTop > 0) {
+        if ($(".main-container")[0].scrollTop > 0 && $(".main-container").width() < 950) {
             $(".mobile-navigation").addClass("scrolled");
         } else {
             $(".mobile-navigation").removeClass("scrolled");
         }
+
+        
+        if ( $(".main-container")[0].scrollTop < lastScrollTop && $(".main-container")[0].scrollTop > 100 ) {
+
+            $(".scrolled-nav").css("top", "0");
+
+        }else {
+
+            $(".scrolled-nav").css("top", "-100%");
+
+        }
+
+        lastScrollTop = $(".main-container")[0].scrollTop;
 
     })
 

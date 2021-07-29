@@ -22,6 +22,7 @@ div {
       scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
+  scrollbar-width: 10px;
 }
 
 section {
@@ -99,6 +100,66 @@ section .haf {
 
 .scrolled {
   background-color: #c4c4c43a;
+}
+
+.scrolled-nav {
+  width: 100%;
+  position: fixed;
+  top: -100%;
+  background-color: #c4c4c43a;
+  z-index: 3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.scrolled-nav .haf-nav {
+  width: 50%;
+}
+
+.scrolled-nav .haf-nav:first-child {
+  padding-left: 100px;
+}
+
+.scrolled-nav .haf-nav:first-child h2 {
+  color: #fff;
+  font-size: 30px;
+  margin: 25px 0;
+}
+
+.scrolled-nav .haf-nav:first-child h2 span {
+  color: #e38b39;
+}
+
+.scrolled-nav .haf-nav:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scrolled-nav .haf-nav:last-child a {
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 31.5px 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.scrolled-nav .haf-nav:last-child a:hover {
+  color: #e38b39;
+}
+
+.scrolled-nav .haf-nav:last-child a.active {
+  color: #e38b39;
 }
 
 #acasa .haf:first-child {
@@ -460,7 +521,7 @@ section .haf {
 }
 
 #meniu .haf:last-child {
-  background-color: #fff;
+  background-color: #e38b39;
   padding: 0 50px;
   overflow: auto;
   scrollbar-width: none;
@@ -468,7 +529,7 @@ section .haf {
 
 #meniu .haf:last-child > h2 {
   font-size: 35px;
-  color: #e38b39;
+  color: #fff;
   text-align: center;
 }
 
@@ -477,39 +538,131 @@ section .haf {
   margin: 20px 0;
 }
 
-#meniu .haf:last-child .product img {
-  width: 200px;
-  height: 200px;
-  float: left;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-right: 30px;
+#meniu .haf:last-child .product .product-img {
+  position: relative;
+  width: 27.5%;
+  margin-right: 5%;
 }
 
-#meniu .haf:last-child .product h4, #meniu .haf:last-child .product p {
+#meniu .haf:last-child .product .product-img img {
+  width: 100%;
+  height: 200px;
+  min-width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#meniu .haf:last-child .product .product-text {
+  position: relative;
+  width: 67.5%;
+}
+
+#meniu .haf:last-child .product .product-text h4,
+#meniu .haf:last-child .product .product-text p {
   float: left;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 70%;
-  color: #e38b39;
+  width: 100%;
+  color: #fff;
   text-overflow: ellipsis;
-  /* Needed to make it work */
   overflow: hidden;
   white-space: nowrap;
 }
 
-#meniu .haf:last-child .product p {
+#meniu .haf:last-child .product .product-text p {
   margin: 10px 0;
 }
 
-#meniu .haf:last-child .product h4 {
+#meniu .haf:last-child .product .product-text h4 {
   font-size: 25px;
   margin: 0 0 15px 0;
 }
 
+#rezerva .haf:first-child {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../img/pexels-valeria-boltneva-1484516.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/pexels-valeria-boltneva-1484516.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#rezerva .haf:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper {
+  width: 80%;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper h2 {
+  font-size: 50px;
+  color: #e38b39;
+  text-align: center;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper .input {
+  width: 49%;
+  border: 4px solid #e38b39;
+  position: relative;
+  margin: 20px 0;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper .input input {
+  width: 100%;
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: transparent;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper .input span {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  background-color: #16191e;
+  color: #e38b39;
+  padding: 0 10px;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper .input:nth-child(2),
+#rezerva .haf:last-child .rezerva-wrapper .input:nth-child(5) {
+  margin-right: 2%;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper .input:nth-child(4),
+#rezerva .haf:last-child .rezerva-wrapper .input:nth-child(7) {
+  width: 100%;
+}
+
+#rezerva .haf:last-child .rezerva-wrapper .rezerva-submit {
+  width: 100%;
+  background-color: #e38b39;
+  border: 4px solid #fff;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
 @media (max-width: 1500px) {
+  .scrolled-nav .haf-nav:last-child a {
+    font-size: 15px;
+  }
   #acasa .haf:first-child .text-wrapper h1 {
     font-size: 60px;
   }
@@ -522,12 +675,18 @@ section .haf {
 }
 
 @media (max-width: 1120px) {
+  .scrolled-nav .haf-nav:last-child a {
+    font-size: 12px;
+  }
   #acasa .haf:first-child .haf-nav a {
     font-size: 12px;
   }
 }
 
 @media (max-width: 950px) {
+  .scrolled-nav {
+    display: none;
+  }
   #acasa .haf:first-child .haf-nav {
     display: none;
   }
@@ -543,11 +702,11 @@ section .haf {
     height: 100vh;
     scroll-snap-align: start;
   }
+  #galerie {
+    height: 100vh;
+  }
   #galerie .haf:last-child {
     display: none;
-  }
-  #meniu .haf:last-child .product h4, #meniu .haf:last-child .product p {
-    width: 50%;
   }
 }
 
@@ -560,6 +719,18 @@ section .haf {
   }
 }
 
+@media (max-width: 750px) {
+  #meniu .haf:last-child .product .product-img {
+    position: relative;
+    width: 30%;
+    margin-right: 20%;
+  }
+  #meniu .haf:last-child .product .product-text {
+    position: relative;
+    width: 50%;
+  }
+}
+
 @media (max-width: 650px) {
   #despre-noi .haf:first-child .text-wrapper h2 {
     font-size: 60px;
@@ -568,12 +739,17 @@ section .haf {
     font-size: 18px;
     padding: 0 10px;
   }
+  #rezerva .haf:last-child .rezerva-wrapper .input {
+    width: 100%;
+  }
 }
 
-@media (max-width: 600px) {
-  #meniu .haf:last-child .product img {
-    width: 100px;
-    height: 100px;
+@media (max-width: 550px) {
+  #meniu .haf:last-child .product .product-img {
+    width: 100%;
+  }
+  #meniu .haf:last-child .product .product-text {
+    width: 100%;
   }
 }
 
