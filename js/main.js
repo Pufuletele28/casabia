@@ -64,11 +64,12 @@ $(document).ready(function() {
         
         if ( $(".main-container")[0].scrollTop < lastScrollTop && $(".main-container")[0].scrollTop > 100 ) {
 
-            $(".scrolled-nav").css("top", "0");
+            $(".scrolled-nav").addClass("reveal-nav");
+
 
         }else {
 
-            $(".scrolled-nav").css("top", "-100%");
+            $(".scrolled-nav").removeClass("reveal-nav");
 
         }
 
